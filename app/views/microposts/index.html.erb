@@ -1,0 +1,26 @@
+<%= link_to "Home", root_path, :class => "btn btn-warning" %>
+<%= link_to "Add User", new_user_path, :class => "btn btn-info" %>
+<%= link_to "Add Post", new_micropost_path, :class => "btn btn-info" %>
+
+<h2>List of Posts</h2>
+<table class="table table-bordered">
+  <tr>
+    <th>Id</th>
+    <th>Content</th>
+    <th></th>
+    <th>Actions</th>
+  </tr>
+<% @mc.each do |m| %>
+  <tr>
+    <td><%= m.id %></td>
+    <td><%= m.content %></td>
+    <td><%= m.user_id %>
+    <td>
+    <%= link_to "Edit", "#" %>
+    <%= link_to "Delete", "#" %>
+
+    </td>
+  </tr>
+<% end %>
+
+</table>
